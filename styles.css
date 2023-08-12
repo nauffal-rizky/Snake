@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border-radius: 5px;
+}
+.game {
+  width: 65vmin;
+  height: 70vmin;
+}
+.scores-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #444;
+  color: #ccc;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px 25px;
+}
+.playground {
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+}
+.food {
+  background-color: red;
+}
+.snake-head {
+  background-color: lightskyblue;
+}
