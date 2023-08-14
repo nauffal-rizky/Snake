@@ -5,6 +5,9 @@ let snakeX = 10,
   snakeY = 10;
 let velocityX = 0,
   velocityY = 0;
+let snakeBody = [];
+let gameOver = false;
+let setIntervalId;
 
 const changeFoodPosition = () => {
   foodX = Math.floor(Math.random() * 30) + 1;
@@ -12,36 +15,70 @@ const changeFoodPosition = () => {
 };
 
 const gameInit = () => {
+  if (gameOver) return gameOverHandle();
   let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX};"></div>`;
 
   if (snakeX === foodX && snakeY === foodY) {
     changeFoodPosition();
+    snakeBody.push([foodX, foodY]);
   }
+
+  for (let i = snakeBody.length - 1; i > 0; i--) {
+    snakeBody[i] = snakeBody[i - 1];
+  }
+
+  snakeBody[0] = [snakeX, snakeY]; // First element
 
   snakeX += velocityX;
   snakeY += velocityY;
-  htmlMarkup += `<div class="snake-head" style="grid-area: ${snakeY} / ${snakeX};"></div>`;
+
+  /* No wall gameplay 
+  if (snakeX < 1) {
+    snakeX = 30;
+  } else if (snakeY < 1) {
+    snakeY = 30;
+  } else if (snakeX > 30) {
+    snakeX = 1;
+  } else if (snakeY > 30) {
+    snakeY = 1;
+  }
+  */
+  /* with wall gameplay */
+  if (snakeX <= 0 || snakeY <= 0 || snakeX > 30 || snakeY > 30) {
+    gameOver = true;
+  }
+  console.log(`X: ${snakeX}, Y: ${snakeY}`);
+
+  for (let i = 0; i < snakeBody.length; i++) {
+    htmlMarkup += `<div class="snake-head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]};"></div>`;
+  }
   playground.innerHTML = htmlMarkup;
 };
 
 const changeDirection = (e) => {
-  console.log(e);
-  if (e.key === 'ArrowUp') {
+  if (e.key === 'ArrowUp' && velocityY != 1) {
     velocityX = 0;
     velocityY = -1;
-  } else if (e.key === 'ArrowDown') {
+  } else if (e.key === 'ArrowDown' && velocityY != -1) {
     velocityX = 0;
     velocityY = 1;
-  } else if (e.key === 'ArrowLeft') {
+  } else if (e.key === 'ArrowLeft' && velocityX != 1) {
     velocityX = -1;
     velocityY = 0;
-  } else if (e.key === 'ArrowRight') {
+  } else if (e.key === 'ArrowRight' && velocityX != -1) {
     velocityX = 1;
     velocityY = 0;
   }
   gameInit();
 };
+// gameInit();
+
+const gameOverHandle = () => {
+  clearInterval(setIntervalId);
+  alert(`YOU LOSE!!!`);
+  window.location.reload();
+};
 
 changeFoodPosition();
-setInterval(gameInit, 125);
+setIntervalId = setInterval(gameInit, 125);
 document.addEventListener('keydown', changeDirection);
