@@ -1,73 +1,196 @@
 * {
-	padding: 0;
-	margin: 0;
-	text-decoration: none;
-	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	border-radius: 5px;
+  min-height: 100vh;
 }
+
+.main-menu,
+.mode-menu,
 .game {
-	display: flex;
-	flex-direction: column;
-	width: 65vmin;
-	height: 70vmin;
-	background-color: #444;
-	border-radius: 5px;
-	overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in;
+}
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.main-menu {
+  width: 800px;
+  max-width: 90%;
+  background-color: #faf0d7;
+  padding: 15px 0px 10px 0px;
+  border-radius: 10px;
+}
+.game-title {
+  color: #cceebc;
+  font-family: 'Poppins', sans-serif;
+  font-size: 45px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+}
+.game-title span {
+  color: #8cc0de;
+}
+.play-btn {
+  display: block;
+  width: 40%;
+  background-color: transparent;
+  color: #8cc0de;
+  font-size: 18px;
+  padding: 10px 0px;
+  margin: 20px auto 18px auto;
+  border: 2px solid #8cc0de;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s;
+}
+.play-btn:hover {
+  background-color: #8cc0de;
+  color: #cceebc;
+}
+.credits {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin: 0px 10px 0px 0px;
+}
+.credits a {
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #ffd9c0;
+  transition: 0.3s;
+}
+.credits a:hover {
+  transform: scale(1.5);
+}
+
+.mode-title {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+}
+.mode-container {
+  display: flex;
+  gap: 20px;
+  width: 800px;
+}
+.mode-btn {
+  display: block;
+  font-size: 20px;
+  padding: 18px 24px;
+  margin: 0 auto;
+  border-radius: 5px;
+  outline: none;
+}
+.easyMode-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: 2px solid #28a745;
+  transition: 0.3s;
+}
+.easyMode-btn:hover {
+  background-color: #fff;
+  color: #28a745;
+}
+.normalMode-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: 2px solid #007bff;
+  transition: 0.3s;
+}
+.normalMode-btn:hover {
+  background-color: #fff;
+  color: #007bff;
+}
+.hardMode-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: 2px solid #dc3545;
+  transition: 0.3s;
+}
+.hardMode-btn:hover {
+  background-color: #fff;
+  color: #dc3545;
+}
+.dropdown {
+  background-color: #efe5d5;
+}
+.dropdown ul li {
+  text-align: justify;
+  list-style: none;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  width: 60vmin;
+  height: 70vmin;
+  background-color: #444;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .scores-container {
-	display: flex;
-	justify-content: space-between;
-	color: #ccc;
-	font-family: "Poppins", sans-serif;
-	padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  color: #ccc;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px 25px;
 }
 .playground {
-	display: grid;
-	grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-	width: 100%;
-	height: 100%;
-	background-color: #111;
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+  width: 100%;
+  height: 100%;
+  background-color: #111;
 }
 .food {
-	background-color: red;
+  background-color: red;
 }
 .snake-head {
-	background-color: lightskyblue;
+  background-color: lightskyblue;
 }
 .controls {
-	display: flex;
+  display: flex;
 }
 .controls i {
-	width: 25%;
-	background-color: #444;
-	color: #ccc;
-	text-align: center;
-	padding: 25px 0px;
-	cursor: pointer;
+  width: 25%;
+  background-color: #444;
+  color: #ccc;
+  text-align: center;
+  padding: 25px 0px;
+  cursor: pointer;
 }
 .controls i:nth-child(2) {
-	border-left: 1px solid #111;
-	border-right: 1px solid #111;
+  border-left: 1px solid #111;
+  border-right: 1px solid #111;
 }
 .controls i:nth-child(3) {
-	border-right: 1px solid #111;
+  border-right: 1px solid #111;
 }
 
 @media (max-width: 600px) {
-	.scores-container {
-		padding: 15px 20px;
-	}
-	.scores-container span {
-		font-size: 14px;
-	}
-	.controls i {
-		padding: 15px 0px;
-	}
+  .scores-container {
+    padding: 15px 20px;
+  }
+  .scores-container span {
+    font-size: 14px;
+  }
+  .controls i {
+    padding: 15px 0px;
+  }
 }
