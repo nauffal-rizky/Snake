@@ -86,16 +86,27 @@
 }
 .mode-container {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
   width: 800px;
 }
+.mode {
+  position: relative;
+  width: 30%;
+}
 .mode-btn {
+  position: absolute;
+  left: 50%;
   display: block;
   font-size: 20px;
   padding: 18px 24px;
   margin: 0 auto;
+  transform: translate(-50%);
   border-radius: 5px;
   outline: none;
+}
+.mode-btn:hover .dropdown {
+  transform: translateY(0px);
+  opacity: 1;
 }
 .easyMode-btn {
   background-color: #28a745;
@@ -129,8 +140,18 @@
 }
 .dropdown {
   background-color: #efe5d5;
+  padding: 5px 10px;
+  /* transform: translateY(-50px); */
+  /* opacity: 0; */
+}
+.dropdown ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 .dropdown ul li {
+  font-family: 'Open sans', sans-serif;
+  font-size: 14px;
   text-align: justify;
   list-style: none;
 }
