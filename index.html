@@ -1,80 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Snake game</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Snake game</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <section class="wrapper">
-      <article class="main-menu">
-        <h1 class="game-title">Hebi<span>.io</span></h1>
-        <button class="play-btn">Play</button>
-        <div class="credits">
-          <a href="https://nauffal-rizky.github.io/">
-            <i class="fa-solid fa-globe"></i>
-          </a>
-          <a href="https://www.instagram.com/nauffal.code/">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/nauffal-rizky-3a3b70243">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        </div>
-      </article>
-      <article class="mode-menu show">
-        <h1 class="mode-title">Select the difficulty:</h1>
-        <div class="mode-container">
-          <div class="mode">
-            <button class="easyMode-btn mode-btn">Easy</button>
-            <div class="dropdown">
-              <ul>
-                <li>1. Can penetrate wall</li>
-                <li>2. The wall are wide</li>
-              </ul>
-            </div>
-          </div>
-          <div class="mode">
-            <button class="normalMode-btn mode-btn">Normal</button>
-            <div class="dropdown">
-              <ul>
-                <li>1. If the snake hit the wall, the snake will die</li>
-                <li>2. The wall size is "Normal"</li>
-              </ul>
-            </div>
-          </div>
-          <div class="mode">
-            <button class="hardMode-btn mode-btn">Hard</button>
-            <div class="dropdown">
-              <ul>
-                <li>1. If the snake hit the wall, the snake will die</li>
-                <li>2. The wall size will be narrower</li>
-                <li>3. Snake speed will be faster</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="game">
-        <div class="scores-container">
-          <span class="score">Score: 0</span>
-          <span class="highscore">Highscore: 0</span>
-        </div>
-        <div class="playground"></div>
-        <div class="controls">
-          <i class="fa-solid fa-arrow-left-long" data-key="ArrowLeft"></i>
-          <i class="fa-solid fa-arrow-right-long" data-key="ArrowRight"></i>
-          <i class="fa-solid fa-arrow-down-long" data-key="ArrowDown"></i>
-          <i class="fa-solid fa-arrow-up-long" data-key="ArrowUp"></i>
-        </div>
-      </article>
-    </section>
+		<!-- CSS -->
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<section class="wrapper">
+			<article class="main-menu">
+				<h1 class="game-title">Hebi<span>.io</span></h1>
+				<button class="play-btn">Play</button>
+				<div class="credits">
+					<a href="https://nauffal-rizky.github.io/">
+						<i class="fa-solid fa-globe"></i>
+					</a>
+					<a href="https://www.instagram.com/nauffal.code/">
+						<i class="fa-brands fa-instagram"></i>
+					</a>
+					<a href="https://www.linkedin.com/in/nauffal-rizky-3a3b70243">
+						<i class="fa-brands fa-linkedin"></i>
+					</a>
+				</div>
+			</article>
+			<article class="mode-menu">
+				<h1 class="mode-title">Select the difficulty:</h1>
+				<div class="mode-container">
+					<div class="mode">
+						<button class="easyMode-btn mode-btn" data-mode="easy">Easy</button>
+						<div class="dropdown">
+							<ul>
+								<li>Can penetrate wall</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mode">
+						<button class="normalMode-btn mode-btn" data-mode="normal">
+							Normal
+						</button>
+						<div class="dropdown">
+							<ul>
+								<li>If the snake hit the wall, the snake will die</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mode">
+						<button class="hardMode-btn mode-btn" data-mode="hard">Hard</button>
+						<div class="dropdown">
+							<ul>
+								<li>If the snake hit the wall, the snake will die</li>
+								<li>Snake speed will be faster</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</article>
+			<article class="game">
+				<div class="scores-container">
+					<span class="score">Score: 0</span>
+					<span class="highscore">Highscore: 0</span>
+				</div>
+				<div class="playground"></div>
+				<div class="controls">
+					<i class="fa-solid fa-arrow-left-long" data-key="ArrowLeft"></i>
+					<i class="fa-solid fa-arrow-right-long" data-key="ArrowRight"></i>
+					<i class="fa-solid fa-arrow-down-long" data-key="ArrowDown"></i>
+					<i class="fa-solid fa-arrow-up-long" data-key="ArrowUp"></i>
+				</div>
+			</article>
+		</section>
 
-    <!-- JavaScript -->
-    <script src="app.js" defer></script>
-    <script src="https://kit.fontawesome.com/1160dd891b.js" crossorigin="anonymous"></script>
-  </body>
+		<!-- JavaScript -->
+		<script src="app.js" defer></script>
+		<script
+			src="https://kit.fontawesome.com/1160dd891b.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>
