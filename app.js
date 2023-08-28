@@ -39,25 +39,30 @@ window.addEventListener("DOMContentLoaded", () => {
 	});
 });
 
+window.addEventListener("keydown", (e) => {
+	if (e.key === "Escape") {
+		console.log(`PAUSE`);
+	}
+});
+
 const changeFoodPosition = () => {
 	foodX = Math.floor(Math.random() * 30) + 1;
 	foodY = Math.floor(Math.random() * 30) + 1;
 };
+changeFoodPosition();
 
 const gameInit = () => {
 	if (gameOver) return gameOverHandle();
 
-	let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX};"></div>`;
-
 	if (snakeX === foodX && snakeY === foodY) {
-		changeFoodPosition();
-		snakeBody.push([foodX, foodY]);
+		// Jika bertabrakan dengan posisi food
+		changeFoodPosition(); // Membuat food baru di lokasi yang baru
+		snakeBody.push([foodX, foodY]); // Menambahkan array food
 
-		score++;
-		highScore = score >= highScore ? score : highScore;
+		score++; // Poin bertambah 1
+		highScore = score >= highScore ? score : highScore; // Nentuin nilai highscore
 
-		localStorage.setItem("highscore", highScore);
-		console.log(highScore);
+		localStorage.setItem("highscore", highScore); // Masukkin highscore ke localstorage
 
 		displayScore.innerText = `Score: ${score}`;
 		displayHighscore.innerText = `Highscore: ${highScore}`;
@@ -83,15 +88,14 @@ const gameInit = () => {
 		} else if (snakeY > 30) {
 			snakeY = 1;
 		}
-	} else if (
-		game.classList.contains("mode-normal") ||
-		game.classList.contains("mode-hard")
-	) {
+	} else {
 		/* with wall gameplay */
 		if (snakeX <= 0 || snakeY <= 0 || snakeX > 30 || snakeY > 30) {
 			gameOver = true;
 		}
 	}
+
+	let htmlMarkup = `<div class="food" style="grid-area: ${foodY} / ${foodX};"></div>`;
 
 	for (let i = 0; i < snakeBody.length; i++) {
 		htmlMarkup += `<div class="snake-head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]};"></div>`;
@@ -108,6 +112,7 @@ const gameInit = () => {
 };
 
 const changeDirection = (e) => {
+	// Velocity -1 means the snake can't go back
 	if (e.key === "ArrowUp" && velocityY != 1) {
 		velocityX = 0;
 		velocityY = -1;
@@ -133,10 +138,26 @@ controls.forEach((key) => {
 
 const gameOverHandle = () => {
 	clearInterval(setIntervalId);
-	alert(`YOU LOSE!!!`);
-	window.location.reload();
+
+	const alertContain = document.createElement("section");
+	alertContain.innerHTML = `
+		<article class="alert-content">
+			<h1 class="alert-title">YOU LOSE!!!</h1>
+			<div class="btn-container">
+				<button class="retry-btn">Retry</button>
+				<button class="exit-btn">Exit</button>
+			</div>
+		</article>
+	`;
+	alertContain.classList.add("alert-container");
+	document.body.appendChild(alertContain);
+
+	const retryBtn = alertContain.querySelector(".retry-btn");
+	const exitBtn = alertContain.querySelector(".exit-btn");
+	exitBtn.addEventListener("click", () => {
+		window.location.reload();
+	});
 };
 
-changeFoodPosition();
 setIntervalId = setInterval(gameInit, 125);
 document.addEventListener("keydown", changeDirection);

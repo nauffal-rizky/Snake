@@ -161,8 +161,8 @@
 .game {
 	display: flex;
 	flex-direction: column;
-	width: 60vmin;
-	height: 75vmin;
+	width: 70vmin;
+	height: 85vmin;
 	background-color: #444;
 	border-radius: 5px;
 	overflow: hidden;
@@ -217,6 +217,76 @@
 }
 .controls i:nth-child(3) {
 	border-right: 1px solid #111;
+}
+
+.alert-container {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+.alert-content {
+	width: 500px;
+	background-color: #fff;
+	padding: 5px 0px 15px 0px;
+	border-radius: 15px;
+}
+.alert-title {
+	font-family: "Poppins", sans-serif;
+	font-size: 35px;
+	text-align: center;
+	margin: 0px 0px 10px 0px;
+}
+.btn-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+.btn-container button {
+	display: block;
+	font-size: 16px;
+	padding: 8px 14px;
+	border-radius: 5px;
+}
+.retry-btn {
+	background-color: #ffc107;
+	color: #fff;
+	border: 2px solid #ffc107;
+	transition: all 0.3s ease;
+}
+.retry-btn:hover {
+	background-color: #fff;
+	color: #ffc107;
+	border: 2px solid #ffc107;
+}
+.exit-btn {
+	background-color: #dc3545;
+	color: #fff;
+	border: 2px solid #dc3545;
+	transition: all 0.3s ease;
+}
+.exit-btn:hover {
+	background-color: #fff;
+	color: #dc3545;
+	border: 2px solid #dc3545;
+}
+
+.pause-container {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+.pause-btn {
+	/* color: #cceebc; */
+	color: #fff;
+	font-size: 25px;
 }
 
 @media (max-width: 600px) {
