@@ -277,16 +277,46 @@
 
 .pause-container {
 	position: fixed;
-	top: 0;
+	top: 0px;
 	bottom: 0;
-	left: 0;
+	left: 0px;
 	right: 0;
-	background-color: rgba(0, 0, 0, 0.7);
+}
+.pause-content {
+	display: inline-block;
+}
+.pause-nav {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 18px 0px 0px 20px;
+}
+.pause-nav i {
+	background-color: #8cc0de;
+	color: #cceebc;
+	border-radius: 20px;
 }
 .pause-btn {
-	/* color: #cceebc; */
-	color: #fff;
-	font-size: 25px;
+	font-size: 26px;
+	padding: 5px 10px;
+	z-index: 2;
+}
+.pause-btn:hover ~ .pause-retry {
+	opacity: 1;
+	pointer-events: auto;
+}
+.pause-btn:hover ~ .pause-exit {
+	opacity: 1;
+	pointer-events: auto;
+}
+.pause-retry,
+.pause-exit {
+	font-size: 22px;
+	padding: 8px 8px;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s;
 }
 
 @media (max-width: 600px) {
