@@ -27,21 +27,6 @@ const displayHighscore = document.querySelector(".highscore");
 const pauseContainer = document.querySelector(".pause-container");
 const pauseNav = pauseContainer.querySelector(".pause-nav");
 const pauseBtn = pauseNav.querySelector(".pause-btn");
-window.addEventListener("click", (e) => {
-	if (e.target == pauseBtn) {
-		pauseBtn.setAttribute("class", "fa-solid fa-play pause-btn pause");
-		pauseNav.classList.toggle("paused");
-		console.log("Pause!!!");
-	} else if (e.target == pauseBtn && pauseBtn.classList.contains("pause")) {
-		pauseBtn.setAttribute("class", "fa-solid fa-pause pause-btn");
-		pauseNav.classList.remove("paused");
-		console.log("Start!!!");
-	} else {
-		pauseBtn.setAttribute("class", "fa-solid fa-pause pause-btn");
-		pauseNav.classList.remove("paused");
-		console.log("Start!!!");
-	}
-});
 
 let foodX, foodY;
 let snakeX = 10,
@@ -178,6 +163,7 @@ const gameOverHandle = () => {
 	retryBtn.addEventListener("click", () => {
 		console.log("Retry!!!");
 	});
+
 	const exitBtn = alertContain.querySelector(".exit-btn");
 	exitBtn.addEventListener("click", () => {
 		window.location.reload();
@@ -186,3 +172,18 @@ const gameOverHandle = () => {
 
 setIntervalId = setInterval(gameInit, 125);
 document.addEventListener("keydown", changeDirection);
+
+window.addEventListener("click", (e) => {
+	if (e.target == pauseBtn) {
+		pauseBtn.setAttribute("class", "fa-solid fa-play pause-btn");
+		pauseNav.classList.toggle("paused");
+	} else {
+		pauseBtn.setAttribute("class", "fa-solid fa-pause pause-btn");
+		pauseNav.classList.remove("paused");
+	}
+	if (!pauseNav.classList.contains("paused")) {
+		pauseBtn.setAttribute("class", "fa-solid fa-pause pause-btn");
+	} else {
+		clearInterval(setIntervalId);
+	}
+});
