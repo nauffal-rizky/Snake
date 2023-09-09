@@ -292,7 +292,9 @@
 .nav-toggle i {
   display: flex;
   align-items: center;
-  background-color: #8cc0de;
+  /* background-color: #8cc0de;
+  color: #ccc; */
+  background-color: #444;
   color: #cceebc;
   border-radius: 20px;
 }

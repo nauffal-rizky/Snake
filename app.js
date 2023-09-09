@@ -10,7 +10,9 @@ let gameOver = false;
 let setIntervalId;
 let intervalTime = 125;
 let score = 0;
-let highScore = localStorage.getItem('highscore') || 0;
+let highScoreEasy = localStorage.getItem('highscoreEasy') || 0;
+let highScoreNormal = localStorage.getItem('highscoreNormal') || 0;
+let highScoreHard = localStorage.getItem('highscoreHard') || 0;
 
 const menu = document.querySelector('.main-menu');
 const game = document.querySelector('.game');
@@ -25,6 +27,7 @@ playBtn.addEventListener('click', () => {
 const modeMenu = document.querySelector('.mode-menu');
 const modeBtn = modeMenu.querySelectorAll('.mode-btn');
 const displayMode = game.querySelector('.game-mode');
+const displayHighscore = game.querySelector('.highscore');
 modeBtn.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     const mode = e.target.dataset.mode;
@@ -36,13 +39,19 @@ modeBtn.forEach((btn) => {
 
     if (game.classList.contains('mode-easy')) {
       displayMode.innerText = mode;
+      displayHighscore.innerText = `Highscore: ${highScoreEasy}`;
+
       intervalTime += 20;
       setIntervalId = setInterval(gameInit, intervalTime);
     } else if (game.classList.contains('mode-normal')) {
       displayMode.innerText = mode;
+      displayHighscore.innerText = `Highscore: ${highScoreNormal}`;
+
       setIntervalId = setInterval(gameInit, intervalTime);
     } else if (game.classList.contains('mode-hard')) {
       displayMode.innerText = mode;
+      displayHighscore.innerText = `Highscore: ${highScoreHard}`;
+
       intervalTime -= 55;
       setIntervalId = setInterval(gameInit, intervalTime);
     }
@@ -51,8 +60,6 @@ modeBtn.forEach((btn) => {
 
 const playground = game.querySelector('.playground');
 const displayScore = game.querySelector('.score');
-const displayHighscore = game.querySelector('.highscore');
-displayHighscore.innerText = `Highscore: ${highScore}`;
 
 const pauseNav = pauseContainer.querySelector('.pause-nav');
 const hoverNav = pauseNav.querySelectorAll('.nav-toggle i');
@@ -108,13 +115,25 @@ const gameInit = () => {
     snakeBody.push([foodX, foodY]); // Menambahkan array food
 
     score++; // Poin bertambah 1
-    console.log(score, intervalTime);
-    highScore = score >= highScore ? score : highScore; // Nentuin nilai highscore
-
-    localStorage.setItem('highscore', highScore); // Masukkin highscore ke localstorage
+    // if ((score %= 2) == 0) {
+    //   console.log(`Even number!!!`);
+    // }
 
     displayScore.innerText = `Score: ${score}`;
-    displayHighscore.innerText = `Highscore: ${highScore}`;
+
+    if (game.classList.contains('mode-easy')) {
+      highScoreEasy = score >= highScoreEasy ? score : highScoreEasy; // Nentuin nilai highscore
+      localStorage.setItem('highscoreEasy', highScoreEasy); // Masukkin highscore ke localstorage
+      displayHighscore.innerText = `Highscore: ${highScoreEasy}`;
+    } else if (game.classList.contains('mode-normal')) {
+      highScoreNormal = score >= highScoreNormal ? score : highScoreNormal; // Nentuin nilai highscore
+      localStorage.setItem('highscoreNormal', highScoreNormal); // Masukkin highscore ke localstorage
+      displayHighscore.innerText = `Highscore: ${highScoreNormal}`;
+    } else if (game.classList.contains('mode-hard')) {
+      highScoreHard = score >= highScoreHard ? score : highScoreHard; // Nentuin nilai highscore
+      localStorage.setItem('highscoreHard', highScoreHard); // Masukkin highscore ke localstorage
+      displayHighscore.innerText = `Highscore: ${highScoreHard}`;
+    }
   }
 
   for (let i = snakeBody.length - 1; i > 0; i--) {
