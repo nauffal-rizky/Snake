@@ -195,14 +195,14 @@ const gameInit = () => {
     }
   }
 
-  const randomNumber = Math.floor(Math.random() * 10);
-  console.log(randomNumber);
+  playground.innerHTML = htmlMarkup + specialMarkup;
+  // const randomNumber = Math.floor(Math.random() * 10);
 
-  if (score % 2 == 1) {
-    playground.innerHTML = htmlMarkup + specialMarkup;
-  } else {
-    playground.innerHTML = htmlMarkup;
-  }
+  // if (score % 2 == 1) {
+  //   playground.innerHTML = htmlMarkup + specialMarkup;
+  // } else {
+  //   playground.innerHTML = htmlMarkup;
+  // }
 };
 
 const changeDirection = (e) => {
@@ -262,7 +262,7 @@ const gameOverHandle = () => {
 
 document.addEventListener('keydown', (e) => {
   if (game.classList.contains('show')) {
-    changeDirection(e.key);
+    changeDirection({ key: e.key });
   }
 });
 
