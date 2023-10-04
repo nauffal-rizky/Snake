@@ -102,17 +102,31 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-const changeFoodPosition = () => {
+const changeFoodPosition = (bodyPositionA, bodyPositionB) => {
   foodX = Math.floor(Math.random() * 30) + 1;
   foodY = Math.floor(Math.random() * 30) + 1;
+
+  if (foodX === bodyPositionA && foodY === bodyPositionB) {
+    console.log(`ALAMAAAKKK!!!`);
+    return false;
+  } else {
+    return foodX, foodY;
+  }
 };
 changeFoodPosition();
 
-const changeSpecialFoodPosition = () => {
+const changeSpecialFoodPosition = (bodyPositionA, bodyPositionB) => {
   setTimeout(() => {
     specialFoodX = Math.floor(Math.random() * 35) + 1;
     specialFoodY = Math.floor(Math.random() * 35) + 1;
-  }, 3000);
+  }, 1000);
+
+  if (specialFoodX === bodyPositionA && specialFoodY === bodyPositionB) {
+    console.log(`ALAMAAAKKK!!!`);
+    return false;
+  } else {
+    return foodX, foodY;
+  }
 };
 changeSpecialFoodPosition();
 
@@ -121,7 +135,9 @@ const gameInit = () => {
 
   if (snakeX === foodX && snakeY === foodY) {
     // Jika bertabrakan dengan posisi food
-    changeFoodPosition(); // Membuat food baru di lokasi yang baru
+    snakeBody.forEach((snake) => {
+      changeFoodPosition(snake[0], snake[1]); // Membuat food baru di lokasi yang baru
+    });
     snakeBody.push([foodX, foodY]); // Menambahkan array food
 
     score++; // Poin bertambah 1
@@ -143,7 +159,9 @@ const gameInit = () => {
   }
 
   if (snakeX === specialFoodX && snakeY === specialFoodY) {
-    changeSpecialFoodPosition();
+    snakeBody.forEach((snake) => {
+      changeSpecialFoodPosition(snake[0], snake[1]);
+    });
     snakeBody.push([specialFoodX, specialFoodY]); // Menambahkan array food
 
     score++;
@@ -195,14 +213,11 @@ const gameInit = () => {
     }
   }
 
-  playground.innerHTML = htmlMarkup + specialMarkup;
-  // const randomNumber = Math.floor(Math.random() * 10);
-
-  // if (score % 2 == 1) {
-  //   playground.innerHTML = htmlMarkup + specialMarkup;
-  // } else {
-  //   playground.innerHTML = htmlMarkup;
-  // }
+  if (score % 2 === 1) {
+    playground.innerHTML = htmlMarkup + specialMarkup;
+  } else {
+    playground.innerHTML = htmlMarkup;
+  }
 };
 
 const changeDirection = (e) => {

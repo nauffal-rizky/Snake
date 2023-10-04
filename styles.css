@@ -30,7 +30,7 @@
 }
 
 .main-menu {
-  width: 600px;
+  width: 500px;
   max-width: 90%;
   background-color: #faf0d7;
   padding: 15px 0px 10px 0px;
@@ -48,7 +48,7 @@
 }
 .play-btn {
   display: block;
-  width: 40%;
+  width: 50%;
   background-color: transparent;
   color: #8cc0de;
   font-size: 18px;
@@ -61,32 +61,42 @@
 }
 .play-btn:hover {
   background-color: #8cc0de;
-  color: #cceebc;
+  color: #fff;
 }
 .credits {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin: 0px 10px 0px 0px;
+  margin: 0px 10px;
 }
-.credits a {
+.creator {
+  color: #fff;
+  text-shadow: 1px 1px 1px #ffd9c0;
+  font-family: 'Roboto', sans-serif;
+}
+.logo {
+  display: flex;
+  gap: 10px;
+}
+.logo a i {
   color: #fff;
   font-size: 20px;
   text-shadow: 1px 1px 1px #ffd9c0;
   transition: 0.3s;
 }
-.credits a:hover {
-  transform: scale(1.5);
+.logo a i:hover {
+  transform: scale(1.3);
 }
 
 .mode-title {
   position: absolute;
   top: -100px;
   left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
   font-family: 'Poppins', sans-serif;
   font-size: 40px;
+  text-align: center;
 }
 .mode-container {
   display: flex;
@@ -197,7 +207,9 @@
 }
 
 .snake-head {
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
+  background-image: url(./images/SNAKE\ HEAD.png);
+  background-size: cover;
 }
 .controls {
   display: flex;
@@ -296,8 +308,6 @@
 .nav-toggle i {
   display: flex;
   align-items: center;
-  /* background-color: #8cc0de;
-  color: #ccc; */
   background-color: #444;
   color: #cceebc;
   border-radius: 20px;
@@ -337,7 +347,6 @@
 }
 .nav-toggle.exit {
   transform: translateY(-47px);
-  /* transform: translateY(-94px); */
 }
 
 @media (max-width: 600px) {
