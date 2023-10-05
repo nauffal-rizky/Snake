@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Snake game</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Snake game</title>
 
+<<<<<<< HEAD
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -82,18 +83,114 @@
           <span>Pause</span>
         </div>
         <!-- <div class="nav-toggle retry">
+=======
+		<!-- CSS -->
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<section class="wrapper">
+			<article class="main-menu">
+				<h1 class="game-title">Hebi<span>.io</span></h1>
+				<button class="play-btn">Play</button>
+				<div class="ver-credit">
+					<span class="version">v 1.0.0</span>
+					<div class="credits">
+						<a href="https://nauffal-rizky.github.io/">
+							<i class="fa-solid fa-globe"></i>
+						</a>
+						<a href="https://www.instagram.com/nauffal.code/">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+						<a href="https://www.linkedin.com/in/nauffal-rizky-3a3b70243">
+							<i class="fa-brands fa-linkedin"></i>
+						</a>
+					</div>
+				</div>
+			</article>
+			<article class="mode-menu">
+				<h1 class="mode-title">Select the difficulty:</h1>
+				<div class="mode-container">
+					<div class="mode">
+						<button class="easyMode-btn mode-btn" data-mode="easy">Easy</button>
+						<div class="dropdown">
+							<ul>
+								<li>- Can penetrate wall</li>
+								<li>- Snake speed is slower</li>
+								<li>
+									- If you surpass 20, 40, 60, etc. points snake speed will
+									became faster and faster
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mode">
+						<button class="normalMode-btn mode-btn" data-mode="normal">
+							Normal
+						</button>
+						<div class="dropdown">
+							<ul>
+								<li>- If the snake hit the wall, the snake will die</li>
+								<li>- Snake speed is normal</li>
+								<li>
+									- If you surpass 20, 40, 60, etc. points snake speed will
+									became faster and faster
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mode">
+						<button class="hardMode-btn mode-btn" data-mode="hard">Hard</button>
+						<div class="dropdown">
+							<ul>
+								<li>- If the snake hit the wall, the snake will die</li>
+								<li>- Snake speed is fast</li>
+								<li>
+									- If you surpass 20, 40, 60, etc. points snake speed will
+									became faster and faster
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</article>
+			<article class="game">
+				<div class="scores-container">
+					<span class="score">Score: 0</span>
+					<span class="game-mode">Normal</span>
+					<span class="highscore">Highscore: 0</span>
+				</div>
+				<div class="playground"></div>
+				<div class="controls">
+					<i class="fa-solid fa-arrow-left-long" data-key="ArrowLeft"></i>
+					<i class="fa-solid fa-arrow-right-long" data-key="ArrowRight"></i>
+					<i class="fa-solid fa-arrow-down-long" data-key="ArrowDown"></i>
+					<i class="fa-solid fa-arrow-up-long" data-key="ArrowUp"></i>
+				</div>
+			</article>
+		</section>
+		<section class="pause-container hide">
+			<article class="pause-nav">
+				<div class="nav-toggle">
+					<i class="fa-solid fa-pause pause-btn"></i>
+					<span>Pause</span>
+				</div>
+				<!-- <div class="nav-toggle retry">
+>>>>>>> c31eda791ad02459fcb321f3ee0430c815be5815
 					<i class="fa-solid fa-arrow-rotate-left pause-retry"></i>
 					<span>Retry</span>
 				</div> -->
-        <div class="nav-toggle exit">
-          <i class="fa-solid fa-arrow-right-from-bracket pause-exit"></i>
-          <span>Exit</span>
-        </div>
-      </article>
-    </section>
+				<div class="nav-toggle exit">
+					<i class="fa-solid fa-arrow-right-from-bracket pause-exit"></i>
+					<span>Exit</span>
+				</div>
+			</article>
+		</section>
 
-    <!-- JavaScript -->
-    <script src="app.js" defer></script>
-    <script src="https://kit.fontawesome.com/1160dd891b.js" crossorigin="anonymous"></script>
-  </body>
+		<!-- JavaScript -->
+		<script src="app.js" defer></script>
+		<script
+			src="https://kit.fontawesome.com/1160dd891b.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>
