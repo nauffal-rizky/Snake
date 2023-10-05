@@ -1,50 +1,58 @@
 * {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
 }
 
 .wrapper {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 .main-menu,
 .mode-menu,
 .game {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease-in;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s ease-in;
 }
 .show {
-  opacity: 1;
-  pointer-events: auto;
+	opacity: 1;
+	pointer-events: auto;
 }
 .hide {
-  opacity: 0;
-  pointer-events: auto;
+	opacity: 0;
+	pointer-events: auto;
 }
 
 .main-menu {
+<<<<<<< HEAD
   width: 500px;
   max-width: 90%;
   background-color: #faf0d7;
   padding: 15px 0px 10px 0px;
   border-radius: 10px;
+=======
+	width: 600px;
+	max-width: 90%;
+	background-color: #faf0d7;
+	padding: 15px 0px 10px 0px;
+	border-radius: 10px;
+>>>>>>> c31eda791ad02459fcb321f3ee0430c815be5815
 }
 .game-title {
-  color: #cceebc;
-  font-family: 'Poppins', sans-serif;
-  font-size: 45px;
-  text-align: center;
-  text-shadow: 1px 1px 1px #000;
+	color: #cceebc;
+	font-family: "Poppins", sans-serif;
+	font-size: 45px;
+	text-align: center;
+	text-shadow: 1px 1px 1px #000;
 }
 .game-title span {
-  color: #8cc0de;
+	color: #8cc0de;
 }
 .play-btn {
   display: block;
@@ -99,264 +107,283 @@
   text-align: center;
 }
 .mode-container {
-  display: flex;
-  justify-content: space-between;
-  width: 800px;
+	display: flex;
+	justify-content: space-between;
+	width: 800px;
 }
 .mode {
-  position: relative;
-  width: 30%;
+	position: relative;
+	width: 30%;
 }
 .mode-btn {
-  position: absolute;
-  left: 50%;
-  display: block;
-  font-size: 20px;
-  padding: 18px 24px;
-  margin: 0 auto;
-  transform: translate(-50%);
-  border-radius: 5px;
-  outline: none;
-  z-index: 2;
+	position: absolute;
+	left: 50%;
+	display: block;
+	font-size: 20px;
+	padding: 18px 24px;
+	margin: 0 auto;
+	transform: translate(-50%);
+	border-radius: 5px;
+	outline: none;
+	z-index: 2;
 }
 .mode-btn:hover ~ .dropdown {
-  border-radius: 5px;
-  transform: translateY(80px);
-  opacity: 1;
+	border-radius: 5px;
+	transform: translateY(80px);
+	opacity: 1;
 }
 .easyMode-btn {
-  background-color: #28a745;
-  color: #fff;
-  border: 2px solid #28a745;
-  transition: 0.3s;
+	background-color: #28a745;
+	color: #fff;
+	border: 2px solid #28a745;
+	transition: 0.3s;
 }
 .easyMode-btn:hover {
-  background-color: #fff;
-  color: #28a745;
+	background-color: #fff;
+	color: #28a745;
 }
 .normalMode-btn {
-  background-color: #007bff;
-  color: #fff;
-  border: 2px solid #007bff;
-  transition: 0.3s;
+	background-color: #007bff;
+	color: #fff;
+	border: 2px solid #007bff;
+	transition: 0.3s;
 }
 .normalMode-btn:hover {
-  background-color: #fff;
-  color: #007bff;
+	background-color: #fff;
+	color: #007bff;
 }
 .hardMode-btn {
-  background-color: #dc3545;
-  color: #fff;
-  border: 2px solid #dc3545;
-  transition: 0.3s;
+	background-color: #dc3545;
+	color: #fff;
+	border: 2px solid #dc3545;
+	transition: 0.3s;
 }
 .hardMode-btn:hover {
-  background-color: #fff;
-  color: #dc3545;
+	background-color: #fff;
+	color: #dc3545;
 }
 .dropdown {
-  background-color: #efe5d5;
-  padding: 8px 12px;
-  transform: translateY(45px);
-  opacity: 0;
-  transition: all 0.3s ease-in;
+	background-color: #efe5d5;
+	padding: 8px 12px;
+	transform: translateY(45px);
+	opacity: 0;
+	transition: all 0.3s ease-in;
 }
 .dropdown ul {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 }
 .dropdown ul li {
-  font-family: 'Open sans', sans-serif;
-  font-size: 14px;
-  list-style: none;
+	font-family: "Open sans", sans-serif;
+	font-size: 14px;
+	list-style: none;
 }
 
 .game {
-  display: flex;
-  flex-direction: column;
-  width: 70vmin;
-  height: 85vmin;
-  background-color: #444;
-  border-radius: 5px;
-  overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	width: 70vmin;
+	height: 85vmin;
+	background-color: #444;
+	border-radius: 5px;
+	overflow: hidden;
 }
 
 .scores-container {
-  display: flex;
-  justify-content: space-between;
-  color: #ccc;
-  font-family: 'Poppins', sans-serif;
-  padding: 20px 25px;
+	display: flex;
+	justify-content: space-between;
+	color: #ccc;
+	font-family: "Poppins", sans-serif;
+	padding: 20px 25px;
 }
 .game-mode {
-  text-transform: capitalize;
+	text-transform: capitalize;
 }
 .playground {
-  display: grid;
-  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-  width: 100%;
-  height: 100%;
-  background-color: #111;
+	display: grid;
+	grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+	width: 100%;
+	height: 100%;
+	background-color: #111;
 }
 .food {
-  background-color: red;
+	background-color: red;
 }
 .special-food {
-  background-color: purple;
+	background-color: purple;
 }
 
 .snake-head {
+<<<<<<< HEAD
   /* background-color: lightskyblue; */
   background-image: url(./images/SNAKE\ HEAD.png);
   background-size: cover;
+=======
+	background-color: lightskyblue;
+>>>>>>> c31eda791ad02459fcb321f3ee0430c815be5815
 }
 .controls {
-  display: flex;
+	display: flex;
 }
 .controls i {
-  width: 25%;
-  background-color: #444;
-  color: #ccc;
-  text-align: center;
-  padding: 30px 0px;
-  cursor: pointer;
+	width: 25%;
+	background-color: #444;
+	color: #ccc;
+	text-align: center;
+	padding: 30px 0px;
+	cursor: pointer;
 }
 .controls i:nth-child(2) {
-  border-left: 1px solid #111;
-  border-right: 1px solid #111;
+	border-left: 1px solid #111;
+	border-right: 1px solid #111;
 }
 .controls i:nth-child(3) {
-  border-right: 1px solid #111;
+	border-right: 1px solid #111;
 }
 
 .alert-container {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.7);
 }
 .alert-content {
-  width: 500px;
-  background-color: #fff;
-  padding: 5px 0px 15px 0px;
-  border-radius: 15px;
+	width: 500px;
+	background-color: #fff;
+	padding: 5px 0px 15px 0px;
+	border-radius: 15px;
 }
 .alert-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 35px;
-  text-align: center;
-  margin: 0px 0px 10px 0px;
+	font-family: "Poppins", sans-serif;
+	font-size: 35px;
+	text-align: center;
+	margin: 0px 0px 10px 0px;
 }
 .btn-container {
-  display: flex;
-  justify-content: space-evenly;
+	display: flex;
+	justify-content: space-evenly;
 }
 .btn-container button {
-  display: block;
-  font-size: 16px;
-  padding: 8px 14px;
-  border-radius: 5px;
+	display: block;
+	font-size: 16px;
+	padding: 8px 14px;
+	border-radius: 5px;
 }
 .retry-btn {
-  background-color: #ffc107;
-  color: #fff;
-  border: 2px solid #ffc107;
-  transition: all 0.3s ease;
+	background-color: #ffc107;
+	color: #fff;
+	border: 2px solid #ffc107;
+	transition: all 0.3s ease;
 }
 .retry-btn:hover {
-  background-color: #fff;
-  color: #ffc107;
-  border: 2px solid #ffc107;
+	background-color: #fff;
+	color: #ffc107;
+	border: 2px solid #ffc107;
 }
 .exit-btn {
-  background-color: #dc3545;
-  color: #fff;
-  border: 2px solid #dc3545;
-  transition: all 0.3s ease;
+	background-color: #dc3545;
+	color: #fff;
+	border: 2px solid #dc3545;
+	transition: all 0.3s ease;
 }
 .exit-btn:hover {
-  background-color: #fff;
-  color: #dc3545;
-  border: 2px solid #dc3545;
+	background-color: #fff;
+	color: #dc3545;
+	border: 2px solid #dc3545;
 }
 
 .pause-container {
-  position: fixed;
-  top: 0px;
-  display: inline-block;
-  transition: 0.3s;
+	position: fixed;
+	top: 0px;
+	display: inline-block;
+	transition: 0.3s;
 }
 .pause-nav {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 18px 0px 0px 20px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+	margin: 18px 0px 0px 20px;
 }
 .nav-toggle {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
 }
 .nav-toggle i {
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   background-color: #444;
   color: #cceebc;
   border-radius: 20px;
+=======
+	display: flex;
+	align-items: center;
+	/* background-color: #8cc0de;
+  color: #ccc; */
+	background-color: #444;
+	color: #cceebc;
+	border-radius: 20px;
+>>>>>>> c31eda791ad02459fcb321f3ee0430c815be5815
 }
 .nav-toggle span {
-  color: #111;
-  font-family: 'Roboto', sans-serif;
-  opacity: 0;
+	color: #111;
+	font-family: "Roboto", sans-serif;
+	opacity: 0;
 }
 .nav-toggle i.hover ~ .nav-toggle span {
-  opacity: 1;
+	opacity: 1;
 }
 .pause-btn {
-  font-size: 22px;
-  padding: 7px 10px;
-  z-index: 2;
+	font-size: 22px;
+	padding: 7px 10px;
+	z-index: 2;
 }
 .pause-nav.paused .nav-toggle.retry,
 .pause-nav.paused .nav-toggle.exit {
-  transform: translateY(0px);
-  opacity: 1;
-  pointer-events: auto;
+	transform: translateY(0px);
+	opacity: 1;
+	pointer-events: auto;
 }
 .nav-toggle.retry,
 .nav-toggle.exit {
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s;
 }
 .pause-retry,
 .pause-exit {
-  font-size: 22px;
-  padding: 8px 8px;
+	font-size: 22px;
+	padding: 8px 8px;
 }
 .nav-toggle.retry {
-  transform: translateY(-47px);
+	transform: translateY(-47px);
 }
 .nav-toggle.exit {
+<<<<<<< HEAD
   transform: translateY(-47px);
+=======
+	transform: translateY(-47px);
+	/* transform: translateY(-94px); */
+>>>>>>> c31eda791ad02459fcb321f3ee0430c815be5815
 }
 
 @media (max-width: 600px) {
-  .scores-container {
-    padding: 15px 20px;
-  }
-  .scores-container span {
-    font-size: 14px;
-  }
-  .controls i {
-    padding: 15px 0px;
-  }
+	.scores-container {
+		padding: 15px 20px;
+	}
+	.scores-container span {
+		font-size: 14px;
+	}
+	.controls i {
+		padding: 15px 0px;
+	}
 }
