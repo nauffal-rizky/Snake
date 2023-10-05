@@ -55,6 +55,58 @@
 	color: #8cc0de;
 }
 .play-btn {
+<<<<<<<<< Temporary merge branch 1
+	display: block;
+	width: 40%;
+	background-color: transparent;
+	color: #8cc0de;
+	font-size: 18px;
+	padding: 10px 0px;
+	margin: 20px auto 18px auto;
+	border: 2px solid #8cc0de;
+	border-radius: 5px;
+	outline: none;
+	transition: 0.3s;
+}
+.play-btn:hover {
+	background-color: #8cc0de;
+	color: #cceebc;
+}
+.ver-credit {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0px 10px;
+}
+.version {
+	color: #fff;
+	font-family: "Open sans", sans-serif;
+	font-size: 14px;
+}
+.credits {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 10px;
+}
+.credits a {
+	color: #fff;
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #ffd9c0;
+	transition: 0.3s;
+}
+.credits a:hover {
+	transform: scale(1.5);
+}
+
+.mode-title {
+	position: absolute;
+	top: -100px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: "Poppins", sans-serif;
+	font-size: 40px;
+=========
   display: block;
   width: 50%;
   background-color: transparent;
@@ -105,6 +157,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 40px;
   text-align: center;
+>>>>>>>>> Temporary merge branch 2
 }
 .mode-container {
 	display: flex;
