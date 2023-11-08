@@ -56,6 +56,11 @@ modeBtn.forEach((btn) => {
         manual.classList.add('hide');
       }
     });
+    if (!manual.classList.contains('hide')) {
+      setTimeout(() => {
+        manual.classList.add('hide');
+      }, 10000);
+    }
 
     if (game.classList.contains('mode-easy')) {
       displayMode.innerText = mode;
