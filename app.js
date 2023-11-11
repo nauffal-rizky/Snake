@@ -80,7 +80,6 @@ modeBtn.forEach((btn) => {
       intervalTime -= 55;
       setIntervalId = setInterval(gameInit, intervalTime);
       hardMode = true;
-      console.log(`Hardmode: ${hardMode}`);
     }
   });
 });
@@ -100,10 +99,14 @@ hoverNav.forEach((nav) => {
 const pauseBtn = pauseNav.querySelector('.pause-btn');
 const exitBtn = pauseNav.querySelector('.pause-exit');
 exitBtn.addEventListener('click', () => {
+  clearInterval(setIntervalId);
+  hardMode = false;
+
   game.classList.remove('show');
-  console.log(game.classList);
-  menu.classList.add('show');
+  game.setAttribute('class', 'game');
+
   pauseNav.classList.add('hide');
+  menu.classList.add('show');
 });
 
 // Escape = Pause
