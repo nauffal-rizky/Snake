@@ -1,125 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hebi.io</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hebi.io</title>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <section class="wrapper">
-      <article class="main-menu show">
-        <h1 class="game-title">Hebi<span>.io</span></h1>
-        <button class="play-btn">Play</button>
-      </article>
-      <article class="mode-menu">
-        <h1 class="mode-title">Select the difficulty:</h1>
-        <div class="mode-container">
-          <div class="mode">
-            <button class="easyMode-btn mode-btn" data-mode="easy">Easy</button>
-            <div class="dropdown">
-              <ul>
-                <li>- Slow speed</li>
-              </ul>
-            </div>
-          </div>
-          <div class="mode">
-            <button class="normalMode-btn mode-btn" data-mode="normal">Normal</button>
-            <div class="dropdown">
-              <ul>
-                <li>- Normal speed</li>
-              </ul>
-            </div>
-          </div>
-          <div class="mode">
-            <button class="hardMode-btn mode-btn" data-mode="hard">Hard</button>
-            <div class="dropdown">
-              <ul>
-                <li>- Fast speed</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="game">
-        <div class="gameboard">
-          <div class="scores-container">
-            <span class="score">Score: 0</span>
-            <span class="game-mode">Normal</span>
-            <span class="highscore">Highscore: 0</span>
-          </div>
-          <div class="playground"></div>
-        </div>
-        <div class="controls">
-          <span></span>
-          <i class="fa-solid fa-arrow-up-long" data-key="ArrowUp"></i>
-          <span></span>
-          <i class="fa-solid fa-arrow-left-long" data-key="ArrowLeft"></i>
-          <span></span>
-          <i class="fa-solid fa-arrow-right-long" data-key="ArrowRight"></i>
-          <span></span>
-          <i class="fa-solid fa-arrow-down-long" data-key="ArrowDown"></i>
-          <span></span>
-        </div>
-      </article>
-      <div class="credits show">
-        <a href="https://nauffal-rizky.github.io/" target="_blank" class="creator">&copy;nauffal</a>
-        <div class="logo">
-          <a href="https://nauffal-rizky.github.io/" target="_blank">
-            <i class="fa-solid fa-globe"></i>
-          </a>
-          <a href="https://www.instagram.com/nauffal.code/" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/nauffal-rizky-3a3b70243" target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        </div>
-      </div>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<section class="wrapper">
+			<article class="main-menu show">
+				<h1 class="game-title">Hebi<span>.io</span></h1>
+				<button class="play-btn">Play</button>
+			</article>
+			<article class="mode-menu">
+				<h1 class="mode-title">Game-mode:</h1>
+				<div class="mode-container">
+					<div class="mode">
+						<button class="easyMode-btn mode-btn" data-mode="easy">Easy</button>
+						<div class="dropdown">
+							<ul>
+								<li>- Slow speed</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mode">
+						<button class="normalMode-btn mode-btn" data-mode="normal">
+							Normal
+						</button>
+						<div class="dropdown">
+							<ul>
+								<li>- Normal speed</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mode">
+						<button class="hardMode-btn mode-btn" data-mode="hard">Hard</button>
+						<div class="dropdown">
+							<ul>
+								<li>- Fast speed</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</article>
+			<article class="game">
+				<div class="gameboard">
+					<div class="scores-container">
+						<span class="score">Score: 0</span>
+						<span class="game-mode">Normal</span>
+						<span class="highscore">Highscore: 0</span>
+					</div>
+					<div class="playground"></div>
+				</div>
+				<div class="controls">
+					<span></span>
+					<i class="fa-solid fa-arrow-up-long" data-key="ArrowUp"></i>
+					<span></span>
+					<i class="fa-solid fa-arrow-left-long" data-key="ArrowLeft"></i>
+					<span></span>
+					<i class="fa-solid fa-arrow-right-long" data-key="ArrowRight"></i>
+					<span></span>
+					<i class="fa-solid fa-arrow-down-long" data-key="ArrowDown"></i>
+					<span></span>
+				</div>
+			</article>
+			<div class="credits show">
+				<a
+					href="https://nauffal-rizky.github.io/"
+					target="_blank"
+					class="creator"
+					>&copy;nauffal</a
+				>
+				<div class="logo">
+					<a href="https://nauffal-rizky.github.io/" target="_blank">
+						<i class="fa-solid fa-globe"></i>
+					</a>
+					<a href="https://www.instagram.com/nauffal.code/" target="_blank">
+						<i class="fa-brands fa-instagram"></i>
+					</a>
+					<a
+						href="https://www.linkedin.com/in/nauffal-rizky-3a3b70243"
+						target="_blank"
+					>
+						<i class="fa-brands fa-linkedin"></i>
+					</a>
+				</div>
+			</div>
 
-      <!-- TOGGLE BUBBLE -->
-      <div class="pause-nav hide">
-        <div class="nav-toggle">
-          <i class="fa-solid fa-pause pause-btn"></i>
-          <span>Pause</span>
-        </div>
-        <div class="nav-toggle exit">
-          <i class="fa-solid fa-arrow-right-from-bracket pause-exit"></i>
-          <span>Exit</span>
-        </div>
-      </div>
+			<!-- TOGGLE BUBBLE -->
+			<div class="pause-nav hide">
+				<div class="nav-toggle">
+					<i class="fa-solid fa-pause pause-btn"></i>
+					<span>Pause</span>
+				</div>
+				<div class="nav-toggle exit">
+					<i class="fa-solid fa-arrow-right-from-bracket pause-exit"></i>
+					<span>Exit</span>
+				</div>
+			</div>
 
-      <!-- BACK TO MAIN MENU -->
-      <a href="#" class="back-btn hide">
-        <i class="fa-solid fa-backward"></i>
-      </a>
+			<!-- BACK TO MAIN MENU -->
+			<a href="#" class="back-btn hide">
+				<i class="fa-solid fa-backward"></i>
+			</a>
 
-      <!-- GAME MANUAL -->
-      <div class="manual hide">
-        <div class="manual-content">
-          <i class="fa-solid fa-x"></i>
-          <h1 class="manual-title">Manual<span>:</span></h1>
-          <ul class="manual-list">
-            <li><span class="blue"></span> : Snake</li>
-            <li><span class="red"></span> : Food</li>
-            <li><span class="purple"></span> : Obstacle</li>
-          </ul>
-          <div class="description">
-            <ul class="manual-desc">
-              <li>1.) <span class="blue"></span> will grow bigger every time <span class="blue"></span> eats <span class="red"></span></li>
-              <li>2.) You will lose every time <span class="blue"></span> hits <span class="purple"></span> or the wall</li>
-              <li>3.) <span class="purple"></span> only appear after you surpass 20 scores</li>
-              <li>4.) The number of <span class="purple"></span> will continue to increase every 5 scores after the first <span class="purple"></span> appear</li>
-              <li>5.) The number of <span class="purple"></span> is 4 in maximal</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+			<!-- GAME MANUAL -->
+			<div class="manual hide">
+				<div class="manual-content">
+					<i class="fa-solid fa-x"></i>
+					<h1 class="manual-title">Manual<span>:</span></h1>
+					<ul class="manual-list">
+						<li><span class="blue"></span> : Snake</li>
+						<li><span class="red"></span> : Food</li>
+						<li><span class="purple"></span> : Obstacle</li>
+					</ul>
+					<div class="description">
+						<ul class="manual-desc">
+							<li>
+								1.) <span class="blue"></span> will grow bigger every time
+								<span class="blue"></span> eats <span class="red"></span>
+							</li>
+							<li>
+								2.) You will lose every time <span class="blue"></span> hits
+								<span class="purple"></span> or the wall
+							</li>
+							<li>
+								3.) <span class="purple"></span> only appear after you surpass
+								20 scores
+							</li>
+							<li>
+								4.) The number of <span class="purple"></span> will continue to
+								increase every 5 scores after the first
+								<span class="purple"></span> appear
+							</li>
+							<li>
+								5.) The number of <span class="purple"></span> is 4 in maximal
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- JavaScript -->
-    <script src="app.js" defer></script>
-    <script src="https://kit.fontawesome.com/1160dd891b.js" crossorigin="anonymous"></script>
-  </body>
+		<!-- JavaScript -->
+		<script src="app.js" defer></script>
+		<script
+			src="https://kit.fontawesome.com/1160dd891b.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>
